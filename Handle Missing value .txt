@@ -1,0 +1,33 @@
+Here’s the corrected and improved version of your text with better clarity and completeness:
+
+Handling Missing Values in a Dataset
+	1.	Deleting Rows/Columns
+            •	This method is commonly used when handling missing values.
+            •	Rows can be deleted if they contain an insignificant number of missing values.
+            •	Columns can be deleted if they have more than 75% missing values, as they may not provide meaningful insights.
+	2.	Replacing with Mean, Median, or Mode
+            •	This method is suitable for independent variables.
+            •	For numerical variables, missing values can be replaced using:
+            •	Mean (if the data is normally distributed).
+            •	Median (if the data has outliers).
+            •	For categorical features, the most frequent value (Mode) is used to fill in the missing data.
+	3.	Algorithmic Imputation
+            •	Some machine learning algorithms can handle missing values effectively, including:
+            •	K-Nearest Neighbors (KNN)
+            •	Naïve Bayes
+            •	Random Forest
+            •	Decision Trees (which can handle missing values without imputation).
+             •	XGBoost (which can handle missing values internally).
+	4.	Predictive Imputation
+            •	This is an advanced technique where a predictive model is trained to estimate missing values.
+            •	Steps involved:
+            •	The dataset without missing values is used as the training set.
+            •	The dataset with missing values is used as the test set.
+            •	The missing values are treated as the target variable and predicted using regression or classification models.
+	5.	Multiple Imputation
+            •	Instead of replacing missing values with a single estimate, multiple imputations create several different plausible values.
+            •	This technique improves accuracy by accounting for uncertainty in the missing data.
+	6.	Using Deep Learning for Imputation
+            •	Neural networks can be trained to predict missing values using autoencoders or deep learning models.
+            •	This method is useful for handling complex patterns in large datasets.
+
