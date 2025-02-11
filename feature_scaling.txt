@@ -1,0 +1,63 @@
+Feature Scaling Notes:
+
+1. Definition:
+    Feature scaling is a technique to standardize the independent variables of a dataset within a specific range.
+
+2. Why Feature Scaling?:
+    - Algorithms like gradient descent converge faster with scaled features.
+    - Distance-based algorithms (e.g., KNN, SVM) perform better with scaled data.
+    - Ensures that all features contribute equally to the result.
+
+3. Common Methods:
+    - Min-Max Scaling (Normalization):
+      Scales the data to a fixed range, usually 0 to 1.
+      Formula: X' = (X - X_min) / (X_max - X_min)
+    - Standardization (Z-score Normalization):
+      Scales the data to have a mean of 0 and a standard deviation of 1.
+      Formula: X' = (X - μ) / σ
+    - Robust Scaling:
+      Uses median and interquartile range, making it robust to outliers.
+      Formula: X' = (X - median) / IQR
+
+4. When to Use:
+    - When features have different units or scales.
+    - Before using algorithms sensitive to feature scaling.
+
+5. Libraries:
+    - scikit-learn:
+      - MinMaxScaler
+      - StandardScaler
+      - RobustScaler
+    - Pandas:
+      - df.apply(lambda x: (x - x.min()) / (x.max() - x.min())) for Min-Max Scaling
+      - df.apply(lambda x: (x - x.mean()) / x.std()) for Standardization
+
+6. Example Code (using scikit-learn):
+    ```python
+    from sklearn.preprocessing import MinMaxScaler, StandardScaler, RobustScaler
+    import pandas as pd
+
+    # Sample data
+    data = {'feature1': [10, 20, 30, 40, 50],
+              'feature2': [100, 200, 300, 400, 500]}
+    df = pd.DataFrame(data)
+
+    # Min-Max Scaling
+    min_max_scaler = MinMaxScaler()
+    df_min_max_scaled = pd.DataFrame(min_max_scaler.fit_transform(df), columns=df.columns)
+
+    # Standardization
+    standard_scaler = StandardScaler()
+    df_standard_scaled = pd.DataFrame(standard_scaler.fit_transform(df), columns=df.columns)
+
+    # Robust Scaling
+    robust_scaler = RobustScaler()
+    df_robust_scaled = pd.DataFrame(robust_scaler.fit_transform(df), columns=df.columns)
+    ```
+
+7. Considerations:
+    - Always fit the scaler on the training data and transform both training and test data.
+    - Be cautious with scaling categorical features.
+
+8. Conclusion:
+    Feature scaling is a crucial preprocessing step that can significantly impact the performance of machine learning models.
