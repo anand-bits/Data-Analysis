@@ -1,0 +1,34 @@
+Outliers in Data Analysis
+==========================
+
+Definition:
+-----------
+An outlier is a data point that differs significantly from other observations. An outlier may be due to variability in the measurement or it may indicate experimental error; the latter are sometimes excluded from the data set.
+
+Types of Outliers:
+------------------
+1. Univariate Outliers: Outliers in one-dimensional data.
+2. Multivariate Outliers: Outliers in multi-dimensional data.
+
+Causes of Outliers:
+-------------------
+1. Data entry errors.
+2. Measurement errors.
+3. Experimental errors.
+4. Natural variation in data.
+5. Changes in system behavior.
+
+Identifying Outliers:
+---------------------
+1. Visualization: Using box plots, scatter plots, or histograms.
+2. Statistical Methods: Using Z-scores, IQR (Interquartile Range), or Grubbs' test.
+
+Handling Outliers:
+------------------
+1. Removing Outliers: If the outlier is due to an error, it can be removed.
+2. Transforming Data: Applying transformations like log or square root to reduce the impact of outliers.
+3. Imputing Outliers: Replacing outliers with a measure like mean or median.
+4. Using Robust Methods: Employing statistical methods that are less sensitive to outliers.
+
+Example in Python:
+------------------
